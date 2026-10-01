@@ -44,9 +44,8 @@ nota_fonte_original <- tags$p(
     "margin: 0.75em 0 1.25em; line-height: 1.45;",
     "max-width: 90ch; overflow-wrap: anywhere;"
   ),
-  tags$span("*", `aria-hidden` = "true"),
   tags$span(class = "sr-only", "Nota sobre o gráfico Original: "),
-  " Figura original extraída do artigo ",
+  "Figura original extraída do artigo ",
   link_externo(
     "Transformações lineares, matrizes e imagens digitais: conexões entre Álgebra Linear e computação gráfica",
     url_doi_artigo,
@@ -91,6 +90,24 @@ citacao_bibtex <- paste(
   sep = "\n"
 )
 
+texto_licencas <- HTML(paste0(
+  "A versão 1.0 está preservada no Zenodo sob o DOI ",
+  as.character(link_externo("10.5281/zenodo.23082804", url_doi_software)),
+  ". O ",
+  as.character(link_externo("código-fonte", url_repositorio)),
+  " é distribuído sob a ",
+  as.character(link_externo(
+    "GNU General Public License, versão 3 ou posterior (GPL-3.0-or-later)",
+    url_licenca_codigo
+  )),
+  ". A figura binária proveniente do artigo está licenciada separadamente sob ",
+  as.character(link_externo(
+    "Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)",
+    url_licenca_figura
+  )),
+  "."
+))
+
 aba_sobre <- tabPanel(
   "Sobre",
   fluidRow(
@@ -111,15 +128,13 @@ aba_sobre <- tabPanel(
             link_externo(
               "Marcelo Osnar Rodrigues de Abreu",
               "https://orcid.org/0000-0001-9103-529X"
-            ),
-            " — Universidade Estadual de Maringá"
+            )
           ),
           tags$li(
             link_externo(
               "Aline Edlaine de Medeiros",
               "https://orcid.org/0000-0001-5849-8815"
-            ),
-            " — Universidade Estadual de Maringá"
+            )
           )
         ),
         tags$h3("Como citar"),
@@ -140,20 +155,7 @@ aba_sobre <- tabPanel(
           citacao_bibtex
         ),
         tags$h3("Código, versão e licenças"),
-        tags$p(
-          "A versão 1.0 está preservada no Zenodo sob o DOI ",
-          link_externo("10.5281/zenodo.23082804", url_doi_software),
-          ". O ",
-          link_externo("código-fonte", url_repositorio),
-          " é distribuído sob a ",
-          link_externo(
-            "GNU General Public License, versão 3 ou posterior (GPL-3.0-or-later)",
-            url_licenca_codigo
-          ),
-          ". A figura binária proveniente do artigo está licenciada separadamente sob ",
-          link_externo("Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)", url_licenca_figura),
-          "."
-        ),
+        tags$p(texto_licencas),
         tags$h3("Dependências"),
         tags$p(
           "Desenvolvido e testado com R 4.4.1. As versões de Shiny, Plotly, DT ",
@@ -222,7 +224,7 @@ shinyUI(navbarPage('',theme = shinytheme("flatly"),
                                           )), column(1, style="padding:25px;", actionButton("meu_botao", "Efetuar operação"))),
                                           fluidRow(column(2),column(3, radioGroupButtons(
                                             inputId = "primeira",
-                                            label = "Linha a ser modifica", 
+                                            label = "Linha a ser modificada",
                                             choices = c("Linha 1", "Linha 2", "Linha 3", "Linha 4", "Linha 5"),
                                             status = "primary"
                                           )),column(3, radioGroupButtons(

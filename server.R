@@ -115,7 +115,7 @@ shinyServer(function(input, output, session) {
                      mode = 'markers', name = '', showlegend = FALSE) %>% layout(yaxis = list(title = 'y', range  = c(-50, 50)),
                                                                                  xaxis = list(title = 'x', range  = c(-50, 50)),
                                                                                  title = list(
-                                                                                   text = 'Original<sup>*</sup>',
+                                                                                   text = 'Original',
                                                                                    font = list(size = 16)
                                                                                  ),
                                                                                  hovermode = TRUE)
