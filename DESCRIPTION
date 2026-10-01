@@ -1,0 +1,28 @@
+Package: transformacoeslinearesnoplano
+Type: Project
+Title: Transformações lineares no plano
+Version: 1.0
+Authors@R: c(
+    person("Marcelo Osnar Rodrigues de", "Abreu", role = "aut",
+           comment = c(ORCID = "0000-0001-9103-529X")),
+    person("Aline Edlaine de", "Medeiros", role = "aut",
+           comment = c(ORCID = "0000-0001-5849-8815"))
+    )
+Description: Aplicativo web educacional para realizar operações elementares
+    com matrizes e explorar transformações lineares no plano por meio de uma
+    figura binária.
+License: GPL (>= 3)
+Encoding: UTF-8
+URL: https://github.com/Osnar/transformacoes-lineares-no-plano,
+    https://osnar.shinyapps.io/algebra_linear/
+BugReports: https://github.com/Osnar/transformacoes-lineares-no-plano/issues
+Imports:
+    DT,
+    plotly,
+    shiny,
+    shinyBS,
+    shinydashboard,
+    shinydashboardPlus,
+    shinyMatrix,
+    shinythemes,
+    shinyWidgets

@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: >-
+  Se você utilizar este software, cite-o por meio dos metadados abaixo.
+title: "Transformações lineares no plano"
+type: software
+version: "1.0"
+date-released: 2026-10-01
+authors:
+  - family-names: "Abreu"
+    given-names: "Marcelo Osnar Rodrigues de"
+    orcid: "https://orcid.org/0000-0001-9103-529X"
+  - family-names: "Medeiros"
+    given-names: "Aline Edlaine de"
+    orcid: "https://orcid.org/0000-0001-5849-8815"
+abstract: >-
+  Aplicativo web educacional desenvolvido em R e Shiny para realizar
+  operações elementares com matrizes e explorar transformações lineares
+  no plano por meio de uma figura binária.
+keywords:
+  - "álgebra linear"
+  - "transformações lineares"
+  - "matrizes"
+  - "software educacional"
+  - "R"
+  - "Shiny"
+license: GPL-3.0-or-later
+url: "https://osnar.shinyapps.io/algebra_linear/"
+repository-code: "https://github.com/Osnar/transformacoes-lineares-no-plano"
+references:
+  - type: article
+    authors:
+      - family-names: "Abreu"
+        given-names: "Marcelo Osnar Rodrigues de"
+        orcid: "https://orcid.org/0000-0001-9103-529X"
+      - family-names: "Medeiros"
+        given-names: "Aline Edlaine de"
+        orcid: "https://orcid.org/0000-0001-5849-8815"
+    title: >-
+      Transformações lineares, matrizes e imagens digitais:
+      conexões entre Álgebra Linear e computação gráfica
+    journal: "JEEPEMA"
+    volume: 10
+    issue: 1
+    year: 2026
+    doi: "10.4025/jeepema.v10.n1.art1"
+    url: "https://jeepema.com.br/index.php/jeepema/pt_BR/article/view/66"
