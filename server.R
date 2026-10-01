@@ -114,8 +114,10 @@ shinyServer(function(input, output, session) {
       fig <- plot_ly(x = x, y = y, type = 'scatter', 
                      mode = 'markers', name = '', showlegend = FALSE) %>% layout(yaxis = list(title = 'y', range  = c(-50, 50)),
                                                                                  xaxis = list(title = 'x', range  = c(-50, 50)),
-                                                                                 title='Original',
-                                                                                 titlefont = list(size = 16),
+                                                                                 title = list(
+                                                                                   text = 'Original<sup>*</sup>',
+                                                                                   font = list(size = 16)
+                                                                                 ),
                                                                                  hovermode = TRUE)
       fig
       
@@ -158,8 +160,10 @@ shinyServer(function(input, output, session) {
       fig <- plot_ly(x = dados$x, y = dados$y, type = 'scatter', 
                      mode = 'markers', name = '', showlegend = FALSE) %>% layout(yaxis = list(title = 'y', range  = c(-50, 50)),
                                                                                  xaxis = list(title = 'x', range  = c(-50, 50)),
-                                                                                 title='Transformado',
-                                                                                 titlefont = list(size = 16),
+                                                                                 title = list(
+                                                                                   text = 'Transformado',
+                                                                                   font = list(size = 16)
+                                                                                 ),
                                                                                  hovermode = TRUE)
       fig
       

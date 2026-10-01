@@ -16,25 +16,41 @@ url_licenca_codigo <- paste0(url_repositorio, "/blob/main/LICENSE")
 url_licenca_figura <- paste0(url_repositorio, "/blob/main/LICENSES/CC-BY-4.0.txt")
 url_doi_software <- "https://doi.org/10.5281/zenodo.23082804"
 url_doi_artigo <- "https://doi.org/10.4025/jeepema.v10.n1.art1"
+estilo_link_secundario <- paste(
+  "color: #00695c; text-decoration: underline;",
+  "text-underline-offset: 0.12em;"
+)
 
-link_externo <- function(texto, url) {
+link_externo <- function(texto, url, estilo = NULL) {
   tags$a(
     texto,
     href = url,
     target = "_blank",
-    rel = "noopener noreferrer"
+    rel = "noopener noreferrer",
+    style = estilo
   )
 }
 
-atribuicao_figura <- tags$figcaption(
+grafico_original <- tags$div(
+  `aria-describedby` = "nota-fonte-original",
+  plotlyOutput("original")
+)
+
+nota_fonte_original <- tags$p(
+  id = "nota-fonte-original",
+  role = "note",
   style = paste(
-    "font-size: 0.82rem; color: #5f6368;",
-    "margin: 0.4rem 0 1rem; line-height: 1.5;"
+    "font-size: 0.9em; color: #5f6368;",
+    "margin: 0.75em 0 1.25em; line-height: 1.45;",
+    "max-width: 90ch; overflow-wrap: anywhere;"
   ),
-  "Figura extraída do artigo ",
+  tags$span("*", `aria-hidden` = "true"),
+  tags$span(class = "sr-only", "Nota sobre o gráfico Original: "),
+  " Figura original extraída do artigo ",
   link_externo(
     "Transformações lineares, matrizes e imagens digitais: conexões entre Álgebra Linear e computação gráfica",
-    url_doi_artigo
+    url_doi_artigo,
+    estilo_link_secundario
   ),
   ", JEEPEMA, v. 10, n. 1, art. 1."
 )
@@ -45,13 +61,14 @@ rodape <- tags$footer(
   style = paste(
     "margin-top: 2rem; padding: 0.9rem 1rem;",
     "border-top: 1px solid #ddd; background: #fafafa;",
-    "font-size: 0.82rem; color: #5f6368;",
-    "text-align: center; line-height: 1.6;"
+    "font-size: 0.9em; color: #5f6368;",
+    "text-align: center; line-height: 1.6;",
+    "overflow-wrap: anywhere;"
   ),
   "Transformações lineares no plano, versão 1.0 — ",
-  link_externo("código-fonte", url_repositorio),
+  link_externo("código-fonte", url_repositorio, estilo_link_secundario),
   " (GPL-3.0-or-later) — DOI: ",
-  link_externo("10.5281/zenodo.23082804", url_doi_software)
+  link_externo("10.5281/zenodo.23082804", url_doi_software, estilo_link_secundario)
 )
 
 citacao_apa <- paste0(
@@ -284,10 +301,10 @@ shinyUI(navbarPage('',theme = shinytheme("flatly"),
                                             mainPanel(
                                                tags$figure(
                                                  style = "margin: 0;",
-                                                 fluidRow(column(6, plotlyOutput("original")), column(6, plotlyOutput("transformado"))),
-                                                 atribuicao_figura
+                                                 fluidRow(column(6, grafico_original), column(6, plotlyOutput("transformado")))
                                                ),
-                                              DT::DTOutput('table2')
+                                              DT::DTOutput('table2'),
+                                              nota_fonte_original
                                             )
                                           )
                                   ),
