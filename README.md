@@ -1,8 +1,10 @@
-# Transformações lineares no plano
+# Álgebra linear: ferramentas interativas
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23082803.svg)](https://doi.org/10.5281/zenodo.23082803)
 
 Aplicativo web educacional desenvolvido em R e Shiny para explorar operações elementares com matrizes e transformações lineares no plano.
+
+**Versão atual:** 1.1
 
 **Versão em execução:** <https://osnar.shinyapps.io/algebra_linear/>
 
@@ -48,10 +50,19 @@ shiny::runApp(".", launch.browser = TRUE)
 
 Ao utilizar o software em trabalhos acadêmicos, cite a versão consultada:
 
+**Versão 1.1 (atual)**
+
+> de Abreu, M. O. R., & de Medeiros, A. E. (2026). *Álgebra linear: ferramentas interativas* (Versão 1.1) [Software de computador]. Zenodo.
+
+O DOI específico será acrescentado após a emissão da versão 1.1 pelo Zenodo.
+
+**Versão 1.0**
+
 > de Abreu, M. O. R., & de Medeiros, A. E. (2026). *Transformações lineares no plano* (Versão 1.0) [Software de computador]. Zenodo. <https://doi.org/10.5281/zenodo.23082804>
 
-- **DOI da versão 1.0:** <https://doi.org/10.5281/zenodo.23082804>
 - **DOI conceitual (todas as versões):** <https://doi.org/10.5281/zenodo.23082803>
+
+A versão 1.1 inaugura o título *Álgebra linear: ferramentas interativas*, que passa a designar o aplicativo completo. Os módulos continuam denominados *Escalonamento* e *Transformações lineares no plano*. A versão 1.0 permanece arquivada sob o título original.
 
 Os metadados de citação também estão disponíveis em [`CITATION.cff`](CITATION.cff).
 

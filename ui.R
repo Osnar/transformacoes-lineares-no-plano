@@ -14,7 +14,12 @@ library(DT)
 url_repositorio <- "https://github.com/Osnar/transformacoes-lineares-no-plano"
 url_licenca_codigo <- paste0(url_repositorio, "/blob/main/LICENSE")
 url_licenca_figura <- paste0(url_repositorio, "/blob/main/LICENSES/CC-BY-4.0.txt")
-url_doi_software <- "https://doi.org/10.5281/zenodo.23082804"
+nome_software <- "Álgebra linear: ferramentas interativas"
+versao_software <- "1.1"
+doi_versao_1_0 <- "10.5281/zenodo.23082804"
+url_doi_versao_1_0 <- paste0("https://doi.org/", doi_versao_1_0)
+doi_conceitual <- "10.5281/zenodo.23082803"
+url_doi_conceitual <- paste0("https://doi.org/", doi_conceitual)
 url_doi_artigo <- "https://doi.org/10.4025/jeepema.v10.n1.art1"
 estilo_link_secundario <- paste(
   "color: #00695c; text-decoration: underline;",
@@ -64,35 +69,41 @@ rodape <- tags$footer(
     "text-align: center; line-height: 1.6;",
     "overflow-wrap: anywhere;"
   ),
-  "Transformações lineares no plano, versão 1.0 — ",
+  nome_software,
+  ", versão ",
+  versao_software,
+  " — ",
   link_externo("código-fonte", url_repositorio, estilo_link_secundario),
-  " (GPL-3.0-or-later) — DOI: ",
-  link_externo("10.5281/zenodo.23082804", url_doi_software, estilo_link_secundario)
+  " (GPL-3.0-or-later) — DOI conceitual: ",
+  link_externo(doi_conceitual, url_doi_conceitual, estilo_link_secundario)
 )
 
 citacao_apa <- paste0(
   "de Abreu, M. O. R., & de Medeiros, A. E. (2026). ",
-  "Transformações lineares no plano (Versão 1.0) ",
-  "[Software de computador]. Zenodo. ",
-  "https://doi.org/10.5281/zenodo.23082804"
+  nome_software,
+  " (Versão ",
+  versao_software,
+  ") [Software de computador]. Zenodo."
 )
 
 citacao_bibtex <- paste(
   "@software{de_abreu_medeiros_2026,",
   "  author    = {de Abreu, Marcelo Osnar Rodrigues and de Medeiros, Aline Edlaine},",
-  "  title     = {Transformações lineares no plano},",
-  "  version   = {1.0},",
+  paste0("  title     = {", nome_software, "},"),
+  paste0("  version   = {", versao_software, "},"),
   "  year      = {2026},",
   "  publisher = {Zenodo},",
-  "  doi       = {10.5281/zenodo.23082804},",
-  "  url       = {https://doi.org/10.5281/zenodo.23082804}",
   "}",
   sep = "\n"
 )
 
 texto_licencas <- HTML(paste0(
-  "A versão 1.0 está preservada no Zenodo sob o DOI ",
-  as.character(link_externo("10.5281/zenodo.23082804", url_doi_software)),
+  "A versão 1.0, publicada sob o título <em>Transformações lineares no plano</em>, está preservada no Zenodo sob o DOI ",
+  as.character(link_externo(doi_versao_1_0, url_doi_versao_1_0)),
+  ". A versão 1.1, intitulada <em>",
+  nome_software,
+  "</em>, integra a coleção identificada pelo DOI conceitual ",
+  as.character(link_externo(doi_conceitual, url_doi_conceitual)),
   ". O ",
   as.character(link_externo("código-fonte", url_repositorio)),
   " é distribuído sob a ",
@@ -116,11 +127,16 @@ aba_sobre <- tabPanel(
       offset = 1,
       tags$div(
         style = "max-width: 900px; margin: 0 auto; padding: 1.5rem 0 2rem;",
-        tags$h2("Transformações lineares no plano"),
-        tags$p(tags$strong("Versão 1.0")),
+        tags$h2(nome_software),
+        tags$p(tags$strong(paste("Versão", versao_software))),
         tags$p(
           "Aplicativo web educacional desenvolvido em R e Shiny para explorar ",
           "operações elementares com matrizes e transformações lineares no plano."
+        ),
+        tags$p(
+          "A versão 1.1 inaugura este título para designar o aplicativo completo. ",
+          "Os módulos continuam denominados “Escalonamento” e ",
+          "“Transformações lineares no plano”."
         ),
         tags$h3("Autoria"),
         tags$ul(
@@ -311,5 +327,6 @@ shinyUI(navbarPage('',theme = shinytheme("flatly"),
                                           )
                                   ),
                                   aba_sobre,
-                                  footer = rodape
+                                  footer = rodape,
+                                  windowTitle = nome_software
   ))
