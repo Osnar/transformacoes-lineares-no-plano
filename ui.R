@@ -11,7 +11,155 @@ library(plotly)
 library(shinyMatrix)
 library(DT)
 
-shinyUI(tagList(navbarPage('',theme = shinytheme("flatly"),
+url_repositorio <- "https://github.com/Osnar/transformacoes-lineares-no-plano"
+url_licenca_codigo <- paste0(url_repositorio, "/blob/main/LICENSE")
+url_licenca_figura <- paste0(url_repositorio, "/blob/main/LICENSES/CC-BY-4.0.txt")
+url_doi_software <- "https://doi.org/10.5281/zenodo.23082804"
+url_doi_artigo <- "https://doi.org/10.4025/jeepema.v10.n1.art1"
+
+link_externo <- function(texto, url) {
+  tags$a(
+    texto,
+    href = url,
+    target = "_blank",
+    rel = "noopener noreferrer"
+  )
+}
+
+atribuicao_figura <- tags$figcaption(
+  style = paste(
+    "font-size: 0.82rem; color: #5f6368;",
+    "margin: 0.4rem 0 1rem; line-height: 1.5;"
+  ),
+  "Figura extraída do artigo ",
+  link_externo(
+    "Transformações lineares, matrizes e imagens digitais: conexões entre Álgebra Linear e computação gráfica",
+    url_doi_artigo
+  ),
+  ", JEEPEMA, v. 10, n. 1, art. 1."
+)
+
+rodape <- tags$footer(
+  role = "contentinfo",
+  class = "container-fluid",
+  style = paste(
+    "margin-top: 2rem; padding: 0.9rem 1rem;",
+    "border-top: 1px solid #ddd; background: #fafafa;",
+    "font-size: 0.82rem; color: #5f6368;",
+    "text-align: center; line-height: 1.6;"
+  ),
+  "Transformações lineares no plano, versão 1.0 — ",
+  link_externo("código-fonte", url_repositorio),
+  " (GPL-3.0-or-later) — DOI: ",
+  link_externo("10.5281/zenodo.23082804", url_doi_software)
+)
+
+citacao_apa <- paste0(
+  "de Abreu, M. O. R., & de Medeiros, A. E. (2026). ",
+  "Transformações lineares no plano (Versão 1.0) ",
+  "[Software de computador]. Zenodo. ",
+  "https://doi.org/10.5281/zenodo.23082804"
+)
+
+citacao_bibtex <- paste(
+  "@software{de_abreu_medeiros_2026,",
+  "  author    = {de Abreu, Marcelo Osnar Rodrigues and de Medeiros, Aline Edlaine},",
+  "  title     = {Transformações lineares no plano},",
+  "  version   = {1.0},",
+  "  year      = {2026},",
+  "  publisher = {Zenodo},",
+  "  doi       = {10.5281/zenodo.23082804},",
+  "  url       = {https://doi.org/10.5281/zenodo.23082804}",
+  "}",
+  sep = "\n"
+)
+
+aba_sobre <- tabPanel(
+  "Sobre",
+  fluidRow(
+    column(
+      width = 10,
+      offset = 1,
+      tags$div(
+        style = "max-width: 900px; margin: 0 auto; padding: 1.5rem 0 2rem;",
+        tags$h2("Transformações lineares no plano"),
+        tags$p(tags$strong("Versão 1.0")),
+        tags$p(
+          "Aplicativo web educacional desenvolvido em R e Shiny para explorar ",
+          "operações elementares com matrizes e transformações lineares no plano."
+        ),
+        tags$h3("Autoria"),
+        tags$ul(
+          tags$li(
+            link_externo(
+              "Marcelo Osnar Rodrigues de Abreu",
+              "https://orcid.org/0000-0001-9103-529X"
+            ),
+            " — Universidade Estadual de Maringá"
+          ),
+          tags$li(
+            link_externo(
+              "Aline Edlaine de Medeiros",
+              "https://orcid.org/0000-0001-5849-8815"
+            ),
+            " — Universidade Estadual de Maringá"
+          )
+        ),
+        tags$h3("Como citar"),
+        tags$p(tags$strong("APA 7")),
+        tags$pre(
+          style = paste(
+            "white-space: pre-wrap; overflow-wrap: anywhere;",
+            "background: #f7f7f7; border: 1px solid #ddd;"
+          ),
+          citacao_apa
+        ),
+        tags$p(tags$strong("BibTeX")),
+        tags$pre(
+          style = paste(
+            "white-space: pre-wrap; overflow-wrap: anywhere;",
+            "background: #f7f7f7; border: 1px solid #ddd;"
+          ),
+          citacao_bibtex
+        ),
+        tags$h3("Código, versão e licenças"),
+        tags$p(
+          "A versão 1.0 está preservada no Zenodo sob o DOI ",
+          link_externo("10.5281/zenodo.23082804", url_doi_software),
+          ". O ",
+          link_externo("código-fonte", url_repositorio),
+          " é distribuído sob a ",
+          link_externo(
+            "GNU General Public License, versão 3 ou posterior (GPL-3.0-or-later)",
+            url_licenca_codigo
+          ),
+          ". A figura binária proveniente do artigo está licenciada separadamente sob ",
+          link_externo("Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)", url_licenca_figura),
+          "."
+        ),
+        tags$h3("Dependências"),
+        tags$p(
+          "Desenvolvido e testado com R 4.4.1. As versões de Shiny, Plotly, DT ",
+          "e das demais dependências estão declaradas em ",
+          link_externo("DESCRIPTION", paste0(url_repositorio, "/blob/main/DESCRIPTION")),
+          " e registradas no arquivo ",
+          link_externo("renv.lock", paste0(url_repositorio, "/blob/main/renv.lock")),
+          " do repositório."
+        ),
+        tags$h3("Artigo associado"),
+        tags$p(
+          link_externo(
+            "Transformações lineares, matrizes e imagens digitais: conexões entre Álgebra Linear e computação gráfica",
+            url_doi_artigo
+          ),
+          ", JEEPEMA, v. 10, n. 1, art. 1."
+        )
+      )
+    )
+  )
+)
+
+shinyUI(navbarPage('',theme = shinytheme("flatly"),
                                  
                                  # Application title
                                  
@@ -134,42 +282,15 @@ shinyUI(tagList(navbarPage('',theme = shinytheme("flatly"),
                                             
                                             # Show a plot of the generated distribution
                                             mainPanel(
-                                              fluidRow(column(6, plotlyOutput("original")), column(6, plotlyOutput("transformado"))), br(),
-                                              fluidRow(
-                                                column(
-                                                  12,
-                                                  tags$p(
-                                                    style = "text-align: center; margin: 0 0 20px;",
-                                                    "A figura utilizada nesta ferramenta foi retirada do artigo ",
-                                                    tags$a(
-                                                      "Transformações lineares, matrizes e imagens digitais: conexões entre Álgebra Linear e computação gráfica",
-                                                      href = "https://jeepema.com.br/index.php/jeepema/pt_BR/article/view/66",
-                                                      target = "_blank",
-                                                      rel = "noopener noreferrer"
-                                                    ),
-                                                    " (JEEPEMA, v. 10, n. 1, art. 1)."
-                                                  ),
-                                                  tags$p(
-                                                    style = "text-align: center; margin: -12px 0 20px; font-size: 0.9em;",
-                                                    "Software: Transformações lineares no plano, versão 1.0. ",
-                                                    tags$a(
-                                                      "Código-fonte",
-                                                      href = "https://github.com/Osnar/transformacoes-lineares-no-plano",
-                                                      target = "_blank",
-                                                      rel = "noopener noreferrer"
-                                                    ),
-                                                    " (GPL-3.0-or-later). ",
-                                                    tags$a(
-                                                      "DOI da versão: 10.5281/zenodo.23082804",
-                                                      href = "https://doi.org/10.5281/zenodo.23082804",
-                                                      target = "_blank",
-                                                      rel = "noopener noreferrer"
-                                                    )
-                                                  )
-                                                )
-                                              ),
+                                               tags$figure(
+                                                 style = "margin: 0;",
+                                                 fluidRow(column(6, plotlyOutput("original")), column(6, plotlyOutput("transformado"))),
+                                                 atribuicao_figura
+                                               ),
                                               DT::DTOutput('table2')
                                             )
                                           )
-                                 ),
-)))
+                                  ),
+                                  aba_sobre,
+                                  footer = rodape
+  ))
