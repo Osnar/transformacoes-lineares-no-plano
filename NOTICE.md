@@ -16,7 +16,7 @@ O texto integral dessa licença também acompanha o repositório em [`LICENSES/C
 
 Atribuição recomendada:
 
-> Abreu, M. O. R., & Medeiros, A. E. (2026). Transformações lineares, matrizes e imagens digitais: conexões entre Álgebra Linear e computação gráfica. *JEEPEMA, 10*(1), Artigo 1. <https://doi.org/10.4025/jeepema.v10.n1.art1>
+> de Abreu, M. O. R., & de Medeiros, A. E. (2026). Transformações lineares, matrizes e imagens digitais: conexões entre Álgebra Linear e computação gráfica. *JEEPEMA, 10*(1), Artigo 1. <https://doi.org/10.4025/jeepema.v10.n1.art1>
 
 A CC BY 4.0 não se aplica ao código-fonte do aplicativo. A GPL-3.0-or-later não altera a licença da figura nem dos conteúdos gráficos provenientes do artigo.
 

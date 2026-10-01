@@ -19,7 +19,7 @@ A figura binária 35 × 35 utilizada no segundo módulo foi retirada do artigo a
 
 ## Artigo associado
 
-> Abreu, M. O. R., & Medeiros, A. E. (2026). Transformações lineares, matrizes e imagens digitais: conexões entre Álgebra Linear e computação gráfica. *JEEPEMA, 10*(1), Artigo 1. <https://doi.org/10.4025/jeepema.v10.n1.art1>
+> de Abreu, M. O. R., & de Medeiros, A. E. (2026). Transformações lineares, matrizes e imagens digitais: conexões entre Álgebra Linear e computação gráfica. *JEEPEMA, 10*(1), Artigo 1. <https://doi.org/10.4025/jeepema.v10.n1.art1>
 
 Página do artigo: <https://jeepema.com.br/index.php/jeepema/pt_BR/article/view/66>
 
@@ -48,7 +48,7 @@ shiny::runApp(".", launch.browser = TRUE)
 
 Ao utilizar o software em trabalhos acadêmicos, cite a versão consultada:
 
-> Abreu, M. O. R., & Medeiros, A. E. (2026). *Transformações lineares no plano* (Versão 1.0) [Software de computador]. Zenodo. <https://doi.org/10.5281/zenodo.23082804>
+> de Abreu, M. O. R., & de Medeiros, A. E. (2026). *Transformações lineares no plano* (Versão 1.0) [Software de computador]. Zenodo. <https://doi.org/10.5281/zenodo.23082804>
 
 - **DOI da versão 1.0:** <https://doi.org/10.5281/zenodo.23082804>
 - **DOI conceitual (todas as versões):** <https://doi.org/10.5281/zenodo.23082803>

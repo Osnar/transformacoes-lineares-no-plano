@@ -3,9 +3,9 @@ Type: Project
 Title: Transformações lineares no plano
 Version: 1.0
 Authors@R: c(
-    person("Marcelo Osnar Rodrigues de", "Abreu", role = "aut",
+    person("Marcelo Osnar Rodrigues", "de Abreu", role = "aut",
            comment = c(ORCID = "0000-0001-9103-529X")),
-    person("Aline Edlaine de", "Medeiros", role = "aut",
+    person("Aline Edlaine", "de Medeiros", role = "aut",
            comment = c(ORCID = "0000-0001-5849-8815"))
     )
 Description: Aplicativo web educacional para realizar operações elementares
