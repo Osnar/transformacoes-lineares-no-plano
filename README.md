@@ -1,5 +1,7 @@
 # Transformações lineares no plano
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23082803.svg)](https://doi.org/10.5281/zenodo.23082803)
+
 Aplicativo web educacional desenvolvido em R e Shiny para explorar operações elementares com matrizes e transformações lineares no plano.
 
 **Versão em execução:** <https://osnar.shinyapps.io/algebra_linear/>
@@ -44,9 +46,12 @@ shiny::runApp(".", launch.browser = TRUE)
 
 ## Citação
 
-Ao utilizar o software em trabalhos acadêmicos, cite a versão consultada. A referência definitiva da versão 1.0 será atualizada com o DOI emitido pelo Zenodo:
+Ao utilizar o software em trabalhos acadêmicos, cite a versão consultada:
 
-> Abreu, M. O. R., & Medeiros, A. E. (2026). *Transformações lineares no plano* (Versão 1.0) [Software de computador]. Zenodo.
+> Abreu, M. O. R., & Medeiros, A. E. (2026). *Transformações lineares no plano* (Versão 1.0) [Software de computador]. Zenodo. <https://doi.org/10.5281/zenodo.23082804>
+
+- **DOI da versão 1.0:** <https://doi.org/10.5281/zenodo.23082804>
+- **DOI conceitual (todas as versões):** <https://doi.org/10.5281/zenodo.23082803>
 
 Os metadados de citação também estão disponíveis em [`CITATION.cff`](CITATION.cff).
 

@@ -158,7 +158,13 @@ shinyUI(tagList(navbarPage('',theme = shinytheme("flatly"),
                                                       target = "_blank",
                                                       rel = "noopener noreferrer"
                                                     ),
-                                                    " (GPL-3.0-or-later)."
+                                                    " (GPL-3.0-or-later). ",
+                                                    tags$a(
+                                                      "DOI da versão: 10.5281/zenodo.23082804",
+                                                      href = "https://doi.org/10.5281/zenodo.23082804",
+                                                      target = "_blank",
+                                                      rel = "noopener noreferrer"
+                                                    )
                                                   )
                                                 )
                                               ),

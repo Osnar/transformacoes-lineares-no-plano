@@ -20,6 +20,10 @@ Atribuição recomendada:
 
 A CC BY 4.0 não se aplica ao código-fonte do aplicativo. A GPL-3.0-or-later não altera a licença da figura nem dos conteúdos gráficos provenientes do artigo.
 
+## Preservação e identificadores persistentes
+
+A versão 1.0 do software está arquivada no Zenodo com o DOI <https://doi.org/10.5281/zenodo.23082804>. O DOI conceitual <https://doi.org/10.5281/zenodo.23082803> reúne esta e as futuras versões do software.
+
 ## Componentes de terceiros
 
 O aplicativo utiliza pacotes de terceiros do ecossistema R, incluindo Shiny, Plotly e DT. Esses componentes permanecem submetidos às respectivas licenças e não são relicenciados pelos autores deste software.
