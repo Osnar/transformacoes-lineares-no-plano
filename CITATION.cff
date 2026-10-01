@@ -8,10 +8,12 @@ date-released: 2026-10-01
 doi: "10.5281/zenodo.23082804"
 authors:
   - family-names: "Abreu"
-    given-names: "Marcelo Osnar Rodrigues de"
+    given-names: "Marcelo Osnar Rodrigues"
+    name-particle: "de"
     orcid: "https://orcid.org/0000-0001-9103-529X"
   - family-names: "Medeiros"
-    given-names: "Aline Edlaine de"
+    given-names: "Aline Edlaine"
+    name-particle: "de"
     orcid: "https://orcid.org/0000-0001-5849-8815"
 abstract: >-
   Aplicativo web educacional desenvolvido em R e Shiny para realizar
@@ -31,10 +33,12 @@ references:
   - type: article
     authors:
       - family-names: "Abreu"
-        given-names: "Marcelo Osnar Rodrigues de"
+        given-names: "Marcelo Osnar Rodrigues"
+        name-particle: "de"
         orcid: "https://orcid.org/0000-0001-9103-529X"
       - family-names: "Medeiros"
-        given-names: "Aline Edlaine de"
+        given-names: "Aline Edlaine"
+        name-particle: "de"
         orcid: "https://orcid.org/0000-0001-5849-8815"
     title: >-
       Transformações lineares, matrizes e imagens digitais:
