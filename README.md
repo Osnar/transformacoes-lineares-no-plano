@@ -52,9 +52,9 @@ Ao utilizar o software em trabalhos acadêmicos, cite a versão consultada:
 
 **Versão 1.1.1 (atual)**
 
-> de Abreu, M. O. R., & de Medeiros, A. E. (2026). *Álgebra linear: ferramentas interativas* (Versão 1.1.1) [Software de computador]. Zenodo.
+> de Abreu, M. O. R., & de Medeiros, A. E. (2026). *Álgebra linear: ferramentas interativas* (Versão 1.1.1) [Software de computador]. Zenodo. <https://doi.org/10.5281/zenodo.23092369>
 
-O DOI específico será acrescentado após a emissão da versão 1.1.1 pelo Zenodo.
+- **DOI da versão 1.1.1:** <https://doi.org/10.5281/zenodo.23092369>
 
 Esta versão corrige a pontuação junto a links, sincroniza os seletores de linhas com a dimensão da matriz e mantém o estilo visual dos botões após atualizações reativas.
 
