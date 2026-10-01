@@ -1,7 +1,7 @@
 Package: algebralinearferramentasinterativas
 Type: Project
 Title: Álgebra linear: ferramentas interativas
-Version: 1.1
+Version: 1.1.1
 Authors@R: c(
     person("Marcelo Osnar Rodrigues", "de Abreu", role = "aut",
            comment = c(ORCID = "0000-0001-9103-529X")),

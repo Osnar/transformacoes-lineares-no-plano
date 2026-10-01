@@ -3,9 +3,8 @@ message: >-
   Se você utilizar este software, cite-o por meio dos metadados abaixo.
 title: "Álgebra linear: ferramentas interativas"
 type: software
-version: "1.1"
+version: "1.1.1"
 date-released: 2026-10-01
-doi: "10.5281/zenodo.23091461"
 authors:
   - family-names: "Abreu"
     given-names: "Marcelo Osnar Rodrigues"

@@ -15,9 +15,9 @@ url_repositorio <- "https://github.com/Osnar/transformacoes-lineares-no-plano"
 url_licenca_codigo <- paste0(url_repositorio, "/blob/main/LICENSE")
 url_licenca_figura <- paste0(url_repositorio, "/blob/main/LICENSES/CC-BY-4.0.txt")
 nome_software <- "Álgebra linear: ferramentas interativas"
-versao_software <- "1.1"
-doi_versao_atual <- "10.5281/zenodo.23091461"
-url_doi_versao_atual <- paste0("https://doi.org/", doi_versao_atual)
+versao_software <- "1.1.1"
+doi_versao_1_1 <- "10.5281/zenodo.23091461"
+url_doi_versao_1_1 <- paste0("https://doi.org/", doi_versao_1_1)
 doi_versao_1_0 <- "10.5281/zenodo.23082804"
 url_doi_versao_1_0 <- paste0("https://doi.org/", doi_versao_1_0)
 doi_conceitual <- "10.5281/zenodo.23082803"
@@ -52,13 +52,15 @@ nota_fonte_original <- tags$p(
     "max-width: 90ch; overflow-wrap: anywhere;"
   ),
   tags$span(class = "sr-only", "Nota sobre o gráfico Original: "),
-  "Figura original extraída do artigo ",
-  link_externo(
-    "Transformações lineares, matrizes e imagens digitais: conexões entre Álgebra Linear e computação gráfica",
-    url_doi_artigo,
-    estilo_link_secundario
-  ),
-  ", JEEPEMA, v. 10, n. 1, art. 1."
+  HTML(paste0(
+    "Figura original extraída do artigo ",
+    as.character(link_externo(
+      "Transformações lineares, matrizes e imagens digitais: conexões entre Álgebra Linear e computação gráfica",
+      url_doi_artigo,
+      estilo_link_secundario
+    )),
+    ", JEEPEMA, v. 10, n. 1, art. 1."
+  ))
 )
 
 rodape <- tags$footer(
@@ -71,13 +73,10 @@ rodape <- tags$footer(
     "text-align: center; line-height: 1.6;",
     "overflow-wrap: anywhere;"
   ),
-  nome_software,
-  ", versão ",
-  versao_software,
-  " — ",
+  paste0(nome_software, ", versão ", versao_software, " — "),
   link_externo("código-fonte", url_repositorio, estilo_link_secundario),
-  " (GPL-3.0-or-later) — DOI: ",
-  link_externo(doi_versao_atual, url_doi_versao_atual, estilo_link_secundario)
+  " (GPL-3.0-or-later) — DOI conceitual: ",
+  link_externo(doi_conceitual, url_doi_conceitual, estilo_link_secundario)
 )
 
 citacao_apa <- paste0(
@@ -85,8 +84,7 @@ citacao_apa <- paste0(
   nome_software,
   " (Versão ",
   versao_software,
-  ") [Software de computador]. Zenodo. ",
-  url_doi_versao_atual
+  ") [Software de computador]. Zenodo."
 )
 
 citacao_bibtex <- paste(
@@ -95,22 +93,20 @@ citacao_bibtex <- paste(
   paste0("  title     = {", nome_software, "},"),
   paste0("  version   = {", versao_software, "},"),
   "  year      = {2026},",
-  "  publisher = {Zenodo},",
-  paste0("  doi       = {", doi_versao_atual, "},"),
-  paste0("  url       = {", url_doi_versao_atual, "}"),
+  "  publisher = {Zenodo}",
   "}",
   sep = "\n"
 )
 
 texto_licencas <- HTML(paste0(
-  "A versão 1.1 de <em>",
+  "A versão 1.1.1 de <em>",
   nome_software,
-  "</em> está preservada no Zenodo sob o DOI ",
-  as.character(link_externo(doi_versao_atual, url_doi_versao_atual)),
+  "</em> integra a coleção identificada pelo DOI conceitual ",
+  as.character(link_externo(doi_conceitual, url_doi_conceitual)),
+  ". A versão 1.1 permanece preservada sob o DOI ",
+  as.character(link_externo(doi_versao_1_1, url_doi_versao_1_1)),
   ". A versão 1.0, publicada sob o título <em>Transformações lineares no plano</em>, permanece preservada sob o DOI ",
   as.character(link_externo(doi_versao_1_0, url_doi_versao_1_0)),
-  ". O conjunto das versões é identificado pelo DOI conceitual ",
-  as.character(link_externo(doi_conceitual, url_doi_conceitual)),
   ". O ",
   as.character(link_externo("código-fonte", url_repositorio)),
   " é distribuído sob a ",
@@ -141,7 +137,7 @@ aba_sobre <- tabPanel(
           "operações elementares com matrizes e transformações lineares no plano."
         ),
         tags$p(
-          "A versão 1.1 inaugura este título para designar o aplicativo completo. ",
+          "A versão 1.1 inaugurou este título para designar o aplicativo completo. ",
           "Os módulos continuam denominados “Escalonamento” e ",
           "“Transformações lineares no plano”."
         ),
@@ -189,13 +185,13 @@ aba_sobre <- tabPanel(
           " do repositório."
         ),
         tags$h3("Artigo associado"),
-        tags$p(
-          link_externo(
+        tags$p(HTML(paste0(
+          as.character(link_externo(
             "Transformações lineares, matrizes e imagens digitais: conexões entre Álgebra Linear e computação gráfica",
             url_doi_artigo
-          ),
+          )),
           ", JEEPEMA, v. 10, n. 1, art. 1."
-        )
+        )))
       )
     )
   )
@@ -248,12 +244,14 @@ shinyUI(navbarPage('',theme = shinytheme("flatly"),
                                           fluidRow(column(2),column(3, radioGroupButtons(
                                             inputId = "primeira",
                                             label = "Linha a ser modificada",
-                                            choices = c("Linha 1", "Linha 2", "Linha 3", "Linha 4", "Linha 5"),
+                                            choices = paste("Linha", seq_len(3L)),
+                                            selected = "Linha 1",
                                             status = "primary"
                                           )),column(3, radioGroupButtons(
                                             inputId = "segunda",
                                             label = "Linha auxiliar da operação", 
-                                            choices = c("Linha 1", "Linha 2", "Linha 3", "Linha 4", "Linha 5"),
+                                            choices = paste("Linha", seq_len(3L)),
+                                            selected = "Linha 1",
                                             status = "primary"
                                           )), column(2, numericInput(
                                             inputId = 'k',

@@ -4,7 +4,7 @@
 
 Copyright © 2026 Marcelo Osnar Rodrigues de Abreu e Aline Edlaine de Medeiros.
 
-O código-fonte de **Álgebra linear: ferramentas interativas**, versão 1.1, é distribuído sob a **GNU General Public License, versão 3 ou posterior — GPL-3.0-or-later**. O texto integral acompanha o código no arquivo [`LICENSE`](LICENSE).
+O código-fonte de **Álgebra linear: ferramentas interativas**, versão 1.1.1, é distribuído sob a **GNU General Public License, versão 3 ou posterior — GPL-3.0-or-later**. O texto integral acompanha o código no arquivo [`LICENSE`](LICENSE).
 
 ## Figura e conteúdo gráfico
 
@@ -22,7 +22,7 @@ A CC BY 4.0 não se aplica ao código-fonte do aplicativo. A GPL-3.0-or-later n�
 
 ## Preservação e identificadores persistentes
 
-A versão 1.1 de **Álgebra linear: ferramentas interativas** está arquivada no Zenodo com o DOI <https://doi.org/10.5281/zenodo.23091461>. A versão 1.0, publicada sob o título **Transformações lineares no plano**, permanece arquivada com o DOI <https://doi.org/10.5281/zenodo.23082804>. O DOI conceitual <https://doi.org/10.5281/zenodo.23082803> reúne todas as versões do software.
+A versão 1.1.1 de **Álgebra linear: ferramentas interativas** integra a coleção identificada pelo DOI conceitual <https://doi.org/10.5281/zenodo.23082803>. A versão 1.1 permanece arquivada com o DOI <https://doi.org/10.5281/zenodo.23091461>, e a versão 1.0, publicada sob o título **Transformações lineares no plano**, permanece arquivada com o DOI <https://doi.org/10.5281/zenodo.23082804>.
 
 ## Componentes de terceiros
 

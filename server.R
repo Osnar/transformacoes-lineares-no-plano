@@ -329,6 +329,40 @@ shinyServer(function(input, output, session) {
     #     updateMatrixInput(session, 'matriz', matrix('', as.numeric(input$linhas), as.numeric(input$colunas), byrow = T))}})
     
     
+    observeEvent(input$linhas, {
+      n <- suppressWarnings(as.integer(input$linhas))
+      req(!is.na(n), n >= 1L, n <= 5L)
+
+      opcoes <- paste("Linha", seq_len(n))
+      manter_ou_primeira <- function(valor) {
+        if (length(valor) == 1L && !is.na(valor) && valor %in% opcoes) {
+          valor
+        } else {
+          opcoes[[1L]]
+        }
+      }
+
+      selecionada_1 <- manter_ou_primeira(input$primeira)
+      selecionada_2 <- manter_ou_primeira(input$segunda)
+
+      freezeReactiveValue(input, "primeira")
+      freezeReactiveValue(input, "segunda")
+      updateRadioGroupButtons(
+        session,
+        "primeira",
+        choices = opcoes,
+        selected = selecionada_1,
+        status = "primary"
+      )
+      updateRadioGroupButtons(
+        session,
+        "segunda",
+        choices = opcoes,
+        selected = selecionada_2,
+        status = "primary"
+      )
+    }, ignoreInit = FALSE)
+
     observeEvent(list(input$linhas, input$colunas), {
       
       updateMatrixInput(session, 'matriz', matrix('', as.numeric(input$linhas), as.numeric(input$colunas), byrow = T))

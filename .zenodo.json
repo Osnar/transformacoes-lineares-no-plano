@@ -1,0 +1,38 @@
+{
+  "title": "Álgebra linear: ferramentas interativas",
+  "description": "Aplicativo web educacional desenvolvido em R e Shiny para realizar operações elementares com matrizes e explorar transformações lineares no plano por meio de uma figura binária.",
+  "creators": [
+    {
+      "name": "de Abreu, Marcelo Osnar Rodrigues",
+      "orcid": "0000-0001-9103-529X",
+      "type": "ProjectMember"
+    },
+    {
+      "name": "de Medeiros, Aline Edlaine",
+      "orcid": "0000-0001-5849-8815",
+      "type": "ProjectMember"
+    }
+  ],
+  "version": "1.1.1",
+  "publication_date": "2026-10-01",
+  "access_right": "open",
+  "license": "gpl-3.0-or-later",
+  "upload_type": "software",
+  "language": "por",
+  "keywords": [
+    "álgebra linear",
+    "transformações lineares",
+    "matrizes",
+    "software educacional",
+    "R",
+    "Shiny"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.4025/jeepema.v10.n1.art1",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-article"
+    }
+  ],
+  "notes": "Se você utilizar este software, cite-o por meio dos metadados fornecidos."
+}
