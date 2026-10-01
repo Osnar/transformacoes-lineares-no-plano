@@ -52,14 +52,15 @@ Ao utilizar o software em trabalhos acadêmicos, cite a versão consultada:
 
 **Versão 1.1 (atual)**
 
-> de Abreu, M. O. R., & de Medeiros, A. E. (2026). *Álgebra linear: ferramentas interativas* (Versão 1.1) [Software de computador]. Zenodo.
+> de Abreu, M. O. R., & de Medeiros, A. E. (2026). *Álgebra linear: ferramentas interativas* (Versão 1.1) [Software de computador]. Zenodo. <https://doi.org/10.5281/zenodo.23091461>
 
-O DOI específico será acrescentado após a emissão da versão 1.1 pelo Zenodo.
+- **DOI da versão 1.1:** <https://doi.org/10.5281/zenodo.23091461>
 
 **Versão 1.0**
 
 > de Abreu, M. O. R., & de Medeiros, A. E. (2026). *Transformações lineares no plano* (Versão 1.0) [Software de computador]. Zenodo. <https://doi.org/10.5281/zenodo.23082804>
 
+- **DOI da versão 1.0:** <https://doi.org/10.5281/zenodo.23082804>
 - **DOI conceitual (todas as versões):** <https://doi.org/10.5281/zenodo.23082803>
 
 A versão 1.1 inaugura o título *Álgebra linear: ferramentas interativas*, que passa a designar o aplicativo completo. Os módulos continuam denominados *Escalonamento* e *Transformações lineares no plano*. A versão 1.0 permanece arquivada sob o título original.

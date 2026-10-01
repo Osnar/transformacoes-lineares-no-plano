@@ -22,7 +22,7 @@ A CC BY 4.0 não se aplica ao código-fonte do aplicativo. A GPL-3.0-or-later n�
 
 ## Preservação e identificadores persistentes
 
-A versão 1.0, publicada sob o título **Transformações lineares no plano**, está arquivada no Zenodo com o DOI <https://doi.org/10.5281/zenodo.23082804>. A versão 1.1 inaugura o título **Álgebra linear: ferramentas interativas** e integra a mesma coleção. O DOI conceitual <https://doi.org/10.5281/zenodo.23082803> reúne todas as versões do software.
+A versão 1.1 de **Álgebra linear: ferramentas interativas** está arquivada no Zenodo com o DOI <https://doi.org/10.5281/zenodo.23091461>. A versão 1.0, publicada sob o título **Transformações lineares no plano**, permanece arquivada com o DOI <https://doi.org/10.5281/zenodo.23082804>. O DOI conceitual <https://doi.org/10.5281/zenodo.23082803> reúne todas as versões do software.
 
 ## Componentes de terceiros
 

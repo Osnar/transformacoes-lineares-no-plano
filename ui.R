@@ -16,6 +16,8 @@ url_licenca_codigo <- paste0(url_repositorio, "/blob/main/LICENSE")
 url_licenca_figura <- paste0(url_repositorio, "/blob/main/LICENSES/CC-BY-4.0.txt")
 nome_software <- "Álgebra linear: ferramentas interativas"
 versao_software <- "1.1"
+doi_versao_atual <- "10.5281/zenodo.23091461"
+url_doi_versao_atual <- paste0("https://doi.org/", doi_versao_atual)
 doi_versao_1_0 <- "10.5281/zenodo.23082804"
 url_doi_versao_1_0 <- paste0("https://doi.org/", doi_versao_1_0)
 doi_conceitual <- "10.5281/zenodo.23082803"
@@ -74,8 +76,8 @@ rodape <- tags$footer(
   versao_software,
   " — ",
   link_externo("código-fonte", url_repositorio, estilo_link_secundario),
-  " (GPL-3.0-or-later) — DOI conceitual: ",
-  link_externo(doi_conceitual, url_doi_conceitual, estilo_link_secundario)
+  " (GPL-3.0-or-later) — DOI: ",
+  link_externo(doi_versao_atual, url_doi_versao_atual, estilo_link_secundario)
 )
 
 citacao_apa <- paste0(
@@ -83,7 +85,8 @@ citacao_apa <- paste0(
   nome_software,
   " (Versão ",
   versao_software,
-  ") [Software de computador]. Zenodo."
+  ") [Software de computador]. Zenodo. ",
+  url_doi_versao_atual
 )
 
 citacao_bibtex <- paste(
@@ -93,16 +96,20 @@ citacao_bibtex <- paste(
   paste0("  version   = {", versao_software, "},"),
   "  year      = {2026},",
   "  publisher = {Zenodo},",
+  paste0("  doi       = {", doi_versao_atual, "},"),
+  paste0("  url       = {", url_doi_versao_atual, "}"),
   "}",
   sep = "\n"
 )
 
 texto_licencas <- HTML(paste0(
-  "A versão 1.0, publicada sob o título <em>Transformações lineares no plano</em>, está preservada no Zenodo sob o DOI ",
-  as.character(link_externo(doi_versao_1_0, url_doi_versao_1_0)),
-  ". A versão 1.1, intitulada <em>",
+  "A versão 1.1 de <em>",
   nome_software,
-  "</em>, integra a coleção identificada pelo DOI conceitual ",
+  "</em> está preservada no Zenodo sob o DOI ",
+  as.character(link_externo(doi_versao_atual, url_doi_versao_atual)),
+  ". A versão 1.0, publicada sob o título <em>Transformações lineares no plano</em>, permanece preservada sob o DOI ",
+  as.character(link_externo(doi_versao_1_0, url_doi_versao_1_0)),
+  ". O conjunto das versões é identificado pelo DOI conceitual ",
   as.character(link_externo(doi_conceitual, url_doi_conceitual)),
   ". O ",
   as.character(link_externo("código-fonte", url_repositorio)),
